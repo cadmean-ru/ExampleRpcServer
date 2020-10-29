@@ -4,4 +4,9 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Cadmean.CoreKit" Version="0.3.2" />
+      <PackageReference Include="Cadmean.RPC.ASP" Version="0.2.4" />
+    </ItemGroup>
+
 </Project>

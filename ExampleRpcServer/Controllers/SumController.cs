@@ -1,7 +1,13 @@
+using Cadmean.RPC.ASP;
+
 namespace ExampleRpcServer.Controllers
 {
-    public class SumController
+    [FunctionRoute("sum")]
+    public class SumController : FunctionController
     {
-        
+        public int OnCall(int a, int b)
+        {
+            return a + b;
+        }
     }
 }

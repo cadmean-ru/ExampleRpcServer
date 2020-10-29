@@ -1,7 +1,14 @@
+using System;
+using Cadmean.RPC.ASP;
+
 namespace ExampleRpcServer.Controllers
 {
-    public class GetDateController
+    [FunctionRoute("getDate")]
+    public class GetDateController : FunctionController
     {
-        
+        public DateTime OnCall()
+        {
+            return DateTime.Now;
+        }
     }
 }

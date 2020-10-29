@@ -1,7 +1,13 @@
+using Cadmean.RPC.ASP;
+
 namespace ExampleRpcServer.Controllers
 {
-    public class ConcatController
+    [FunctionRoute("concat")]
+    public class ConcatController : FunctionController
     {
-        
+        private string OnCall(string a, string b, string c)
+        {
+            return a + b + c;
+        }
     }
 }

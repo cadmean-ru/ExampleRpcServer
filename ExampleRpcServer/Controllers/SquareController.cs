@@ -1,7 +1,14 @@
+using Cadmean.RPC.ASP;
+
 namespace ExampleRpcServer.Controllers
 {
-    public class SquareController
+    [FunctionRoute("square")]
+    public class SquareController : FunctionController
     {
-        
+        [OnCall]
+        public double Square(double d)
+        {
+            return d * d;
+        }
     }
 }

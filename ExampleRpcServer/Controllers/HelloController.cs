@@ -1,7 +1,14 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace ExampleRpcServer.Controllers
 {
-    public class HelloController
+    [Route("/")]
+    public class HelloController : ControllerBase
     {
-        
+        [HttpGet]
+        public string Get()
+        {
+            return "Hello, cadRPC";
+        }
     }
 }
