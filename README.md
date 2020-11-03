@@ -25,6 +25,7 @@ docker run -d -p 80:80 cadrealm/cadrpcexampleserver
 | square              | d: Double               | Double                 | Calculates d^2                                                                 |
 | sum                 | a, b: Integer           | Integer                | Calculates sun of two integer numbers                                          |
 | weatherForecast.get |                         | WeatherForecast        | Returns a WeatherForecast object                                               |
+| error               | throwError: Boolean     | String                 | Returns an error if throwError is true, a string otherwise                     |
 
 ### See also
 
