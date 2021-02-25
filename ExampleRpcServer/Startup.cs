@@ -19,6 +19,15 @@ namespace ExampleRpcServer
                 rpcConfiguration.DebugMode = true;
                 rpcConfiguration.UseAuthorization(JwtAuthorizationOptions.Validator);
             });
+            services.AddCors(builder =>
+            {
+                builder.AddDefaultPolicy(policyBuilder =>
+                {
+                    policyBuilder.AllowAnyOrigin();
+                    policyBuilder.AllowAnyHeader();
+                    policyBuilder.WithMethods("OPTIONS", "POST");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +43,7 @@ namespace ExampleRpcServer
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
             app.UseRouting();
+            app.UseCors();
             app.UseRpc();
             app.UseEndpoints(endpoints =>
             {
